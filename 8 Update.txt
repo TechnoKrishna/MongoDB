@@ -1,0 +1,25 @@
+# .updateOne({filter}, {update})
+
+# First Document IS Updated which Matches the Condition
+
+-> db.students.updateOne({name: "Krishna"}, {$set:{age: 21}})
+
+# ALL DOCUMENT IS Updated which Matches the Condition
+
+-> db.students.updateMany({name: "Krishna"}, {$set:{age: 21}})
+
+# REMOVE THE FIELD
+
+-> db.students.updateOne({name: "Krishna"}, {$unset:{age: 21}})
+
+# ADD THE FIELD
+
+-> db.students.updateOne({name: "Krishna"}, {$set:{age: 21}})
+
+# if the field is exists and is false change it and doesn't exist then create the field
+
+-> db.students.updateMany({fulltime:{$exists:false}}, {$set:{fullTime:true}})
+
+# GREATER THAN AGE 
+
+-> db.students.updateMany({age:{$gte:20}}, {$set:{fullTime:true}})
