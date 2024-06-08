@@ -1,3 +1,7 @@
 # use keywork is used to create new or use existing database
 
-example -> use student
+-> use student
+
+# View all Databases in System
+
+-> show dbs
