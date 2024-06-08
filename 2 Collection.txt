@@ -1,0 +1,7 @@
+# Create Collection in Database
+
+-> db.createCollection("Students")
+
+# Drop Collection in Database
+
+-> db.students.drop()
