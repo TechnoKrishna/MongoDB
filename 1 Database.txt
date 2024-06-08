@@ -5,3 +5,7 @@
 # View all Databases in System
 
 -> show dbs
+
+# Drop the Current Database
+
+-> db.dropDatabase()
