@@ -12,3 +12,6 @@
 
 -> db.students.findOne({name: 'Krishna'})
 
+# MONGOSH CAN ONLY RETURN 20 QUERY AT ONE TIME AND WANT MORE AFTER THAT WRITE IT IF YOU WANT TO RETURN ALL DOCUMENT IN ONE GO
+
+-> db.students.find().forEach(x => printjson(x))
