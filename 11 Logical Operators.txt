@@ -1,0 +1,21 @@
+# Logical Operators
+
+$and: Returns documents where both queries match
+$or: Returns documents where either query matches
+$nor: Returns documents where both queries fail to match
+$not: Returns documents where the query does not match
+
+------------------------------------------------------------------------------------
+
+-> db.students.find({ $and:[ {age:{$lt:11}, {Hobbies: "Walk"} ]})
+
+-> db.students.find({ $or:[ {age:{$lte:10}, {age:{$gte:12} ]})
+
+-> db.students.find({ $nor:[ {age:{$lte:10}, {age:{$gte:12} ]})
+
+-> db.students.find({ $and:[ {age: {$not : {$lt:11}}}, {age: {$not : {$gt:5}}} ]})
+
+-> db.students.find({age: {$not : {$gte:30}}})
+
+
+
