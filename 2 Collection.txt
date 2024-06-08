@@ -5,3 +5,7 @@
 # Drop Collection in Database
 
 -> db.students.drop()
+
+# Show Collections in Database
+
+-> show collections
