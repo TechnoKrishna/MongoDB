@@ -1,0 +1,41 @@
+# Comparison Operators
+
+$eq: Values are equal
+$ne: Values are not equal
+$gt: Value is greater than another value
+$gte: Value is greater than or equal to another value
+$lt: Value is less than another value
+$lte: Value is less than or equal to another value
+$in: Value is matched within an array & Return the Matched
+$nin: Value is matched within an array & Return the Value That Didn't Match
+
+----------------------------------------------------------------------------------
+
+-> db.students.find({age: {$eq:5}})
+
+-> db.students.find({age: {$ne:5}})
+
+-> db.students.find({age: {$gt:5}})
+
+-> db.students.find({age: {$gte:5}})
+
+-> db.students.find({age: {$lt:5}})
+
+-> db.students.find({age: {$lte:5}})
+
+-> db.students.find({age: {$in:[5,11,12]}})
+
+-> db.students.find({age: {$nin:[5,11,12]}})
+
+# FIND INSIDE A RANGE
+
+-> db.students.find({age: {$gte:5, $lte:15}})
+
+# FIND INSIDE ARRAY
+
+-> db.students.find({Hobbies:"Walk"})
+
+# FIND INSIDE NESTED DOCUMENT
+
+-> db.students.find({ "identity.hasAdhaarCard" : true})
+
