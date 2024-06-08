@@ -1,0 +1,17 @@
+# Data Types
+
+# STRING NUMBER FLOAT BOOLEAN DATE NULL ARRAY OBJECT
+
+db.students.insertOne({name: "krishna", age: 32, gpa: 8.7, fullTime: false, registerDate: new Date(), gradutionDate: null, courses: ["Biology", "Chemistry", "Calculas"], address: {street: "123 Fake St.", city: "Nashik", zip: 123456 }})
+
+
+
+
+    name: 'krishna',
+    age: 32,
+    gpa: 8.7,
+    fullTime: false,
+    registerDate: ISODate('2024-06-08T10:17:23.811Z'),
+    gradutionDate: null,
+    courses: [ 'Biology', 'Chemistry', 'Calculas' ],
+    address: { street: '123 Fake St.', city: 'Nashik', zip: 123456 }
