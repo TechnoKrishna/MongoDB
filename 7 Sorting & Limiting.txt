@@ -1,0 +1,14 @@
+# SORT USES 1 FOR ASCENDING AND -1 FOR DESCENDING
+
+-> db.students.find().sort({name: 1})
+
+-> db.students.find().sort({age: -1})
+
+#Limit Use For No Of Document To Return
+
+-> db.students.find().sort({age: -1}).limit(1)
+
+-> db.students.find().limit(2)
+
+
+
