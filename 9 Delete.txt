@@ -1,0 +1,17 @@
+# DELETE SINGLE DOCUMENT
+
+-> db.students.deleteOne({age:19})
+
+# DELETE MANY DOCUMENT
+
+-> db.students.deleteMany({age:19})
+
+-> db.students.deleteMany({name: "Bjorn"})
+
+# DELETE ALL RECORD
+
+-> db.students.deleteMany({})
+
+# IF THIS FEILD DOESNT EXIST IN DOCUMENT THEN DELETE THAT DOCUMENT
+
+-> db.students.deleteMany({registerData:{$exists:false}})
