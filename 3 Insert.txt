@@ -1,0 +1,7 @@
+# Insert One Document
+
+db.students.insertOne({name: "Krishna", age: 20})
+
+# Insert Many Document
+
+db.students.insertMany([{name: "Bjorn", age: 23}, {name: "Obbe", age: 19}])
