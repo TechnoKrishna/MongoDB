@@ -2,14 +2,13 @@
 
 -> db.students.insertOne({name: "krishna", age: 32, gpa: 8.7, fullTime: false, registerDate: new Date(), gradutionDate: null, courses: ["Biology", "Chemistry", "Calculas"], address: {street: "123 Fake St.", city: "Nashik", zip: 123456 }})
 
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-name: 'krishna'   # STRING 
-age: 32   # NUMBER 
-gpa: 8.7   # FLOAT 
-fullTime: false   # BOOLEAN 
-registerDate: ISODate('2024-06-08T10:17:23.811Z')   # DATE 
-gradutionDate: null   # NULL 
-courses: [ 'Biology', 'Chemistry', 'Calculas' ]   # ARRAY 
-address: { street: '123 Fake St.', city: 'Nashik', zip: 123456 }   # OBJECT or Nested Document
+# STRING   :- name: 'krishna'    
+# NUMBER   :- age: 32   
+# FLOAT    :- gpa: 8.7    
+# BOOLEAN  :- fullTime: false   
+# DATE     :- registerDate: ISODate('2024-06-08T10:17:23.811Z')    
+# NULL     :- gradutionDate: null   
+# ARRAY    :- courses: [ 'Biology', 'Chemistry', 'Calculas' ]    
+# OBJECT   :- address: { street: '123 Fake St.', city: 'Nashik', zip: 123456 }   
