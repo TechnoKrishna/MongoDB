@@ -1,0 +1,14 @@
+# ALL DOCUMENT IS RETURNED
+
+-> db.students.find()
+
+# ALL DOCUMENT IS RETURNED which Matches the Condition
+
+-> db.students.find({age:19})
+
+# RETURNED First Document which Matches the Condition
+
+-> db.students.findOne({age:19})
+
+-> db.students.findOne({name: 'Krishna'})
+
