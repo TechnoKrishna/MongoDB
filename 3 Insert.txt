@@ -1,7 +1,14 @@
 # Insert One Document
 
-db.students.insertOne({name: "Krishna", age: 20})
+-> db.students.insertOne({name: "Krishna", age: 20})
 
 # Insert Many Document
 
-db.students.insertMany([{name: "Bjorn", age: 23}, {name: "Obbe", age: 19}])
+-> db.students.insertMany([{name: "Bjorn", age: 23}, {name: "Obbe", age: 19}])
+
+# IF INSERTING MANY DOCUMENT AT ONCE IT GOES IN SEQUENCE 1ST THEN 2ND THEN 3RD
+# WHILE EXECUTING QUERY IF 1ST DOCUMENT EXECUTE IT WILL BE ADDED 
+# IF 2ND DOCUMENT GET ERROR THEN EVEN IF 3RD DOCUMENT IS WRITE IT WILL NOT BE ADDED
+# SO TO OVER COME THIS U CAN ADD ORDERED:FALSE
+
+-> db.students.insertMany([{name: "Bjorn", age: 23}, {name: "Obbe", age: 19}], {ordered:false})
