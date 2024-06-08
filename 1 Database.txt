@@ -1,0 +1,3 @@
+# use keywork is used to create new or use existing database
+
+example -> use student
