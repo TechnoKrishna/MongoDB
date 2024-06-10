@@ -1,0 +1,19 @@
+# MONGO IMPORT
+
+# ENABLE YOU TO ADD JSON FILE INTO YOUR COLLECTION
+
+# SEARCH MONGODB DATABASE TOOLS
+# DOWNLOAD : MONGODB COMMAND LINE DATABASE TOOLS DOWNLOAD
+# AFTER DOWNLOAD INSTALL
+# ADD BIN FILE PATH ENVIROMENT VARIABLE : C:\Program Files\MongoDB\Tools\100\bin
+# OPEN CMD
+# TWO POSSIBILITY
+# IF NO EXISTING DATABASE THEN :- 
+-> mongoimport "C:\Users\krish\Downloads\employee.json" -d company -c employees --jsonArray 
+# IF HAS EXISTING DATABASE DROP IT AND MAKE A NEW :-
+-> mongoimport "C:\Users\krish\Downloads\employee.json" -d company -c employees --jsonArray --drop
+
+
+# CREATE A DUMMY DATA THROUGH CHATGPT
+
+make a insert queries from the generated data create a 10 dummp data for mongodb in this format {name, age, salary, city, language} 
