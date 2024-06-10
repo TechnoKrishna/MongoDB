@@ -1,0 +1,64 @@
+# INDEXING 
+
+# USED TO VIEW EXECUTIONS
+
+-> db.employees.find({age:{$lt:30}}).explain("executionStats")
+
+# CREATE INDEX : IN THIS 1 REPRESENT ASCENGING ORDER AND -1 REPRESENT DESCENDING
+
+-> db.employees.createIndex({age: 1})
+
+# SHOW INDEXES
+
+-> db.employees.getIndexes()
+
+# DROP INDEX
+
+-> db.employees.dropIndex("age_1")
+
+# CREATE COMPOUND INDEX
+* Order Matters in This
+
+-> db.employees.createIndex({age: 1, gender:1})
+
+# PARTIAL FILTER
+* IT CREATE A INDEX WHERE ONLE TO TEACHERS AGE GREATE THAN 40 WILL BE ADDED
+
+-> db.employees.createIndex({age: 1}, {partialFilterExpression:{age:{$gt:40}}})
+
+# AUTO DELETE INDEX AFTER A TIME
+
+-> db.employees.createIndex({age: 1}, {expireAfterSeconds: 3600})
+
+# COVERED QUERY
+
+-> db.employees.find({name:"krishna"},{_id:0, name:1})
+
+# WINNIG PLAN 
+* IN CASE OF MULTIPLE INDEXES
+* MONGO DB CHECKS THE PERFORMANCE OF INDEX ON A SAMPLE OF DOCUMENTS ONCE THE QUERIES IS RUN AND SET IT AS WINNING PLAN
+* THEN FOR SECOND QUERY OF SIMILAR TYPE IT DOES'NT RACE THEM AGAIN
+* IT STORE THAT WINNING PLAN IN CACHE
+
+-> db.employees.find({age:{$lt:30}}).explain("allPlansExecution")
+
+# MULTI KEY INDEX
+*a multi key index is an index that can be created on an array field
+
+-> db.employees.createIndex({Hobbies: 1})
+
+# TEXT INDEX
+
+-> db.employees.createIndex({bio: "text"})
+
+-> db.employees.createIndex({name:"text", bio: "text"})
+
+
+-> db.employees.find({$text:{$search:"youtuber"}})
+
+-> db.employees.find({$text:{$search:"youtuber actor"}})
+
+# 
+
+
+
