@@ -1,0 +1,19 @@
+# ARRAYS OPERATORS
+
+-> db.students.find( experience:{ $eleMatch: { duration: { $lte:1 } } })
+
+-> db.students.updateMany({experience:{ $eleMatch: { duration: { $lte:1 } } } }, { $set:{ "experience.$.neglect" : true } } )
+
+-> db.students.updateMany({experience:{ $eleMatch: { duration: { $lte:1 } } } }, { $set:{ "experience.$[].neglect" : 1 } } )
+
+-> db.students.updateMany({experience:{ $eleMatch: { duration: { $lte:1 } } } }, { $set:{ "experience.$[e].neglect" : true } }, { arrayFilters:[ { "e.duration":{ $lte:1 } } ] } )
+
+-> db.students.updateOne(name: "Ram" } , {$push:{experience:{ company: "Meta", duration:2 } } } )
+
+-> db.students.updateOne(name: "Ram" } , {$addtoSet:{experience:{ company: "Meta", duration:2 } } } )
+
+-> db.students.updateOne(name: "Ram" } , {$pull:{experience:{ company: "Meta", duration:2 } } } )
+
+-> db.students.updateOne(name: "Ram" } , {$pop:{experience:1 } } )
+
+-> db.students.updateOne(name: "Ram" } , {$pop:{experience:-1 } } )
