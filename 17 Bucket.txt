@@ -1,0 +1,5 @@
+# Bucket 
+
+-> db.employees.aggregate( [ { $match:{ gender: "Male" } }, { $bucket:{ groupBy:"$age", boundaries:[0,30,40], default:"Greater Than 40 Group", output:{ count:{$sum: 1} } } } ] )
+
+-> db.employees.aggregate( [ { $match:{ gender: "Male" } }, { $bucket:{ groupBy:"$age", boundaries:[0,30,40], default:"Greater Than 40 Group", output:{ count:{$sum: 1}, names:{$push:"$name" } } } } ] )
