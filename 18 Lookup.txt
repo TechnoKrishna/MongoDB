@@ -1,0 +1,3 @@
+# LOOKUP
+
+db.employees.aggregate( { $lookup:{ from:"orders", localField:"_id", foreignField:"customer_id", as:"orderDetail" } } )
