@@ -1,0 +1,32 @@
+# Update Operators
+
+# INCREASE AGE OF ALL STUDENTS BY 2
+
+-> db.students.updateMany( {}, {$inc: {age:1}} )
+
+# DECREASE AGE OF ALL STUDENTS BY 2
+
+-> db.students.updateMany( {}, {$inc: {age:-2}} )
+
+# INCREASE AGE OF RAM TO 50 ONLY IF HER AGE IS LESSER THAN IT
+
+-> db.students.updateMany({name: "Sita" } , {$max: { age: 50 } } )
+
+-> db.students.updateMany({name: "Sita" } , {$min: { age: 23 } } )
+
+# MULTIPLY
+
+-> db.students.updateMany({name: "Sita" } , {$mul: { age: 2 } } )
+
+# UNSET USED TO REMOVE FIELD
+
+-> db.students.updateMany({name: "Sita" } , {$unset: { age: 123 } } )
+
+# RENAME
+
+-> db.students.updateMany({} , {$rename: { age: "studentAge" } } )
+
+# UPSERT
+* IF DOC EXIST THEN INSERT AND IF NOT THEN CREATE AND INSERT
+
+-> db.students.updateoNE(name: "Golu" } , {$set: { age: 40 } }, {upsert:true} )
