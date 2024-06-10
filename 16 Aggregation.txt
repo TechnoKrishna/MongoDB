@@ -1,0 +1,32 @@
+# AGGREGATION
+
+-> db.employees.aggregate( [ { $match:{ gender: "male" } } ] )
+
+-> db.employees.aggregate( [ { $group:{ _id: "$age" } } ] )
+
+-> db.employees.aggregate( [ { $group:{ _id: "$age", names: { $push: "$name"} } } ] )
+
+-> db.employees.aggregate( [ { $group:{ _id: "$age", Doc: { $push: "$$ROOT"} } } ] )
+
+-> db.employees.aggregate( [ { $match:{ gender: "Male" } }, { $group:{ _id: "$age", number:{$sum:1} } } ] )
+
+-> db.employees.aggregate( [ { $match:{ gender: "Male" } }, { $group:{ _id: "$age", number:{$sum:1} } }, { $sort:{ number:-1 } } ] )
+
+-> db.employees.aggregate( [ { $match:{ gender: "Male" } }, { $group:{ _id: "$age", number:{$sum:1} } }, { $sort:{ number:-1 } }, { $group:{ _id:null, maxno:{ $max:"$number" } } } ] )
+
+-> -> db.employees.aggregate( [ { $group:{ _id: "$age", sumAge: { $sum: { $toDouble:"$age" } } } } ] )
+
+-> db.employees.aggregate( [ { $unwind:"$Hobbies" }, { $group:{ _id: "$age", hobbies: { $push: "$Hobbies" } } } ] )
+
+->  db.employees.aggregate( [ { $unwind:"$Hobbies" }, { $group: { _id:"$Hobbies", count: { $sum:1 } } } ] )
+
+-> db.employees.aggregate( [ { $group:{ _id:null, avgAge:{ $avg:"$age" } } } ] )
+
+-> db.employees.aggregate( [ { $unwind: "$Hobbies"}, {$group:{ _id:null, count: { $sum:1 } } } ] )
+
+-> db.employees.aggregate( [ { $unwind: "$Hobbies"}, {$group:{ _id:null, allHabits: { $push:"$Hobbies" } } } ] )
+
+-> db.employees.aggregate( [ { $unwind: "$Hobbies"}, {$group:{ _id:null, allHabits: { $addToSet:"$Hobbies" } } } ] )
+
+-> db.employees.aggregate( [ { $group: _id:null, avgScore:{ $avg: { $filter: { input: "$scores", as: "score", cond: {$gt: ["$age", 20] } } } } } ] )
+
