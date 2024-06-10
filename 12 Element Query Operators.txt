@@ -11,7 +11,7 @@ $type : Selects Documents If A Field is of Specified Type
 
 -> db.students.find({age:{$exists:true, $eq:19}})
 
-# RETURN DOCUMENT THAT FIELD TYPE IS SPECIFIED IN GIVEN
+# RETURN DOCUMENT THAT FIELD TYPE IS SPECIFIED IN GIVEN  
 
 -> db.students.find({age:{$type:"number"}})
 
