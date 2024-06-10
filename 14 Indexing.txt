@@ -58,7 +58,6 @@
 
 -> db.employees.find({$text:{$search:"youtuber actor"}})
 
-# 
 
 
 
