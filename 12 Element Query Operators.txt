@@ -1,4 +1,4 @@
-# 
+# Element Query Operators
 
 $exists : Matches Documents That Have The Specified Field
 $type : Selects Documents If A Field is of Specified Type
@@ -14,3 +14,7 @@ $type : Selects Documents If A Field is of Specified Type
 # RETURN DOCUMENT THAT FIELD TYPE IS SPECIFIED IN GIVEN
 
 -> db.students.find({age:{$type:"number"}})
+
+----------------------------------------------------------------------------------
+
+dOCS :- https://www.mongodb.com/docs/manual/reference/operator/aggregation/type/
