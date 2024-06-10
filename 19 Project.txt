@@ -1,0 +1,9 @@
+# PROJECT
+
+-> db.students.aggregate( { $project:{ firstName:1 , lastName:1 } } )
+
+-> db.employees.aggregate( { $project:{ _id:0 } } ).pretty()
+
+-> db.employees.aggregate( { $project:{ _id:0, dept:"$department" } } ).pretty()
+
+-> db.employees.aggregate( { $project:{ _id:0, firstname:1, lastname:1, monthlySalary:"$salary", annualSalary:{$multiply:[12, "$salary"] } } } ).pretty()
