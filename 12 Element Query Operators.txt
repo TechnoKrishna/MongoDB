@@ -1,4 +1,4 @@
-# 
+# Element Query Operators
 
 $exists : Matches Documents That Have The Specified Field
 $type : Selects Documents If A Field is of Specified Type
@@ -18,3 +18,4 @@ $type : Selects Documents If A Field is of Specified Type
 ----------------------------------------------------------------------------------
 
 dOCS :- https://www.mongodb.com/docs/manual/reference/operator/aggregation/type/
+
