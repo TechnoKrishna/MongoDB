@@ -1,0 +1,19 @@
+# ARRAY QUERIES
+
+-> db.students.find({Hobbies:"Cricket"})
+
+-> db.students.find({"experience.company":"Amazon"})
+
+-> db.students.find({"experience.company":"Spotify"}).size()
+
+-> db.students.find({experience:{$size:3}})
+
+-> db.students.find({and: [ { experience: { $exists: true} }, { $expr:{ $gte: [ { $size:"$experience" },3 ] } } ] } )
+
+-> db.students.find( {Hobbies: { $all: ["Walking","Reading"] } } )
+
+-> db.students.find( {Hobbies: { $in: ["Walking","Reading"] } } )
+
+-> db.products.find({products: { $elemMatch: { quantity: { $gt:11 }, name:"apple" } } } )
+
+
