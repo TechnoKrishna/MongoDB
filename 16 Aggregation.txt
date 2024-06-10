@@ -30,3 +30,4 @@
 
 -> db.employees.aggregate( [ { $group: _id:null, avgScore:{ $avg: { $filter: { input: "$scores", as: "score", cond: {$gt: ["$age", 20] } } } } } ] )
 
+
